@@ -41,3 +41,5 @@ func BenchmarkRepeat(b *testing.B) {
 	}
 }
 ```
+
+To run benchmarks the command is `go test -bench=.`.
