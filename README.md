@@ -43,3 +43,9 @@ func BenchmarkRepeat(b *testing.B) {
 ```
 
 To run benchmarks the command is `go test -bench=.`.
+
+## Arrays and slices
+
+An array has the size coded into the type, so `[3]int{1, 2, 3}` is an array, but `[]int{1, 2, 3, 4` is a slice.
+
+Test coverage can be checked with `go test -cover`.
