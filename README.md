@@ -29,3 +29,15 @@ func ExampleAdd() {
 ```
 
 Comments will be automatically added to the Go Doc.
+
+## Iteration
+
+Benchmark tests are a first class citizen in Go.
+
+```go
+func BenchmarkRepeat(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Repeat("a")
+	}
+}
+```
