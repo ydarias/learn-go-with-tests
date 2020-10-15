@@ -15,3 +15,17 @@ func main() {
 	fmt.Println("Hello, world")
 }
 ```
+
+## Integers
+
+Using examples you can improve your documentation, like:
+
+```go
+func ExampleAdd() {
+	sum := Add(1, 5)
+	fmt.Println(sum)
+	// Output: 6
+}
+```
+
+Comments will be automatically added to the Go Doc.

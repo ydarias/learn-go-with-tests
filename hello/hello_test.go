@@ -3,7 +3,7 @@ package main
 import "testing"
 
 func TestHello(t *testing.T) {
-	assertCorrectMessage := func(t *testing.T, got string, expected string) {
+	assertCorrectMessage := func(t *testing.T, got, expected string) {
 		t.Helper()
 		if got != expected {
 			t.Errorf("got %q, was expecting %q", got, expected)
