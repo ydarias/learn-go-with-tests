@@ -142,3 +142,7 @@ var dictionary = map[string]string{}
 
 var dictionary = make(map[string]string)
 ```
+
+## Dependency injection
+
+The dependency injection in Go is done at function level ... so it is a little bit different if you are used to inject using contructors.
