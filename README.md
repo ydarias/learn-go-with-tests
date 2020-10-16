@@ -155,3 +155,7 @@ The dependency injection in Go is done at function level ... so it is a little b
 `go test -race` can help to detect race conditions.
 
 To get concurrent results safely you must use channels.
+
+## Select
+
+With `defer` we can define a function that is called at the end of the current function.
