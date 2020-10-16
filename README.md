@@ -124,3 +124,21 @@ func TestArea(t *testing.T) {
 Like C you need to specify at the arguments of a method when they are passed by value or by reference, in Go that is done with `*`.
 
 In Go the errors are unchecked so you need a linter to detect the places where errors are not managed.
+
+## Maps 
+
+Maps are a reference variable, so you can call it without `*`, but there is dangerous to initialize it empty like.
+
+```go
+var m map[string]string
+```
+
+It is better to use:
+
+```go
+var dictionary = map[string]string{}
+
+// OR
+
+var dictionary = make(map[string]string)
+```
