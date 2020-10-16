@@ -161,3 +161,7 @@ To get concurrent results safely you must use channels.
 With `defer` we can define a function that is called at the end of the current function.
 
 `httptest` is an easy way to create fake servers so the tests are reliable and fast.
+
+## Sync
+
+It is useful to use `go vet` usually to detect undesired copies of objects, because we need to take care using them at arguments since they can pass as values (which makes a copy) or as reference.
