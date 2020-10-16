@@ -89,3 +89,32 @@ checkSums := func(t *testing.T, got, expected []int) {
     }
 }
 ```
+
+## Structs, methods & interfaces
+
+Go doesn't allow different signatures for the same method :-( 
+
+Go's interface resolution is implicit, if the Circle or Rectangle contains a method Area() then it matches Shape interface.
+
+Go allows table driven tests very easily:
+
+```go
+func TestArea(t *testing.T) {
+
+    areaTests := []struct {
+        shape Shape
+        want  float64
+    }{
+        {Rectangle{12, 6}, 72.0},
+        {Circle{10}, 314.1592653589793},
+    }
+
+    for _, tt := range areaTests {
+        got := tt.shape.Area()
+        if got != tt.want {
+            t.Errorf("got %g want %g", got, tt.want)
+        }
+    }
+
+}
+```
