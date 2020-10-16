@@ -3,7 +3,7 @@
 > Complementary code related to the page with the same name (Lean Go with tests)
 
 
-To learn more (read this)[https://quii.gitbook.io/learn-go-with-tests/].
+To learn more [read this](https://quii.gitbook.io/learn-go-with-tests/).
 
 ## Hello world
 
