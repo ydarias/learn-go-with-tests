@@ -118,3 +118,9 @@ func TestArea(t *testing.T) {
 
 }
 ```
+
+## Pointers & errors
+
+Like C you need to specify at the arguments of a method when they are passed by value or by reference, in Go that is done with `*`.
+
+In Go the errors are unchecked so you need a linter to detect the places where errors are not managed.
