@@ -149,3 +149,9 @@ var dictionary = make(map[string]string)
 ## Dependency injection
 
 The dependency injection in Go is done at function level ... so it is a little bit different if you are used to inject using contructors.
+
+## Concurrency
+
+`go test -race` can help to detect race conditions.
+
+To get concurrent results safely you must use channels.
