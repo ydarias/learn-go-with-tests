@@ -159,3 +159,5 @@ To get concurrent results safely you must use channels.
 ## Select
 
 With `defer` we can define a function that is called at the end of the current function.
+
+`httptest` is an easy way to create fake servers so the tests are reliable and fast.
