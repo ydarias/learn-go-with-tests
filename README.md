@@ -49,3 +49,43 @@ To run benchmarks the command is `go test -bench=.`.
 An array has the size coded into the type, so `[3]int{1, 2, 3}` is an array, but `[]int{1, 2, 3, 4` is a slice.
 
 Test coverage can be checked with `go test -cover`.
+
+The code:
+
+```go
+func SumAll(numbersCollections ...[]int) []int {
+	lengthOfNumbers := len(numbersCollections)
+	sums := make([]int, lengthOfNumbers)
+
+	for i, collection := range numbersCollections {
+		sums[i] = Sum(collection)
+	}
+
+	return sums
+}
+```
+
+is equivalent to:
+
+```go
+func SumAll(numbersCollections ...[]int) []int {
+	var sums []int
+
+	for _, collection := range numbersCollections {
+		sums = append(sums, Sum(collection))
+	}
+
+	return sums
+}
+```
+
+The function `reflect.DeepEqual` is not "type safe", so you need to take care when you use it. Wrapping it inside another function will make it typesafe.
+
+```go
+checkSums := func(t *testing.T, got, expected []int) {
+    t.Helper()
+    if !reflect.DeepEqual(got, expected) {
+        t.Errorf("got %v want %v", got, expected)
+    }
+}
+```

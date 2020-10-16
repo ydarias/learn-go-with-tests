@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"reflect"
+	"testing"
+)
 
 func TestSum(t *testing.T) {
 	assertSameNumber := func(t *testing.T, got, expected int, numbers []int) {
@@ -17,5 +20,35 @@ func TestSum(t *testing.T) {
 		expected := 15
 
 		assertSameNumber(t, got, expected, numbers)
+	})
+}
+
+func TestSumAll(t *testing.T) {
+	got := SumAll([]int{1, 2}, []int{0, 9})
+	expected := []int{3, 9}
+
+	if !reflect.DeepEqual(got, expected) {
+		t.Errorf("got %v want %v", got, expected)
+	}
+}
+
+func TestSumAllTails(t *testing.T) {
+	checkSums := func(t *testing.T, got, expected []int) {
+		t.Helper()
+		if !reflect.DeepEqual(got, expected) {
+			t.Errorf("got %v want %v", got, expected)
+		}
+	}
+
+	t.Run("make the sums of some slices", func(t *testing.T) {
+		got := SumAllTails([]int{1, 2}, []int{0, 9})
+		expected := []int{2, 9}
+		checkSums(t, got, expected)
+	})
+
+	t.Run("safely sum empty slices", func(t *testing.T) {
+		got := SumAllTails([]int{}, []int{3, 4, 5})
+		expected := []int{0, 9}
+		checkSums(t, got, expected)
 	})
 }
